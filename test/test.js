@@ -2,13 +2,17 @@ var code = require('../objects.js');
 var expect = require('chai').expect;
 
 describe('objects', function() {
+  var person;
+  beforeEach(function() {
+    person = new code.Person('Elana', 'Kopelevich');
+  })
   it('says the first name', function() {
-    expect(code.person.getFirstName('Elana', 'Kopelevich')).to.equal('Elana Kopelevich');
+    expect(person.firstName).to.equal('Elana');
   })
   it('says the last name', function() {
-    expect(code.person.getFirstName('Elana', 'Kopelevich')).to.equal('Elana Kopelevich');
+    expect(person.getLastName()).to.equal('Kopelevich');
   })
   it('says the full name', function() {
-    expect(code.person.getFirstName('Elana', 'Kopelevich')).to.equal('Elana Kopelevich');
+    expect(person.getFullName()).to.equal('Elana Kopelevich');
   })
 })
